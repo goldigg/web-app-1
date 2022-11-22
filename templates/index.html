@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Humans {% endblock %}</h1>
+    {% for user in users %}
+        <div class='book'>
+            <h3>#{{ user[0] }} - {{ user[1] }} {{ user[2] }}</h3>
+            <i><p>(Age: {{ user[3] }} years-old)</p></i>
+            <p class='description'>{{ user[4] }}</p>
+            <i><p>Added {{ user[5] }}</p></i>
+        </div>
+    {% endfor %}
+{% endblock %}
