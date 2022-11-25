@@ -35,3 +35,7 @@ def get_incomes():
     cur.close()
     conn.close()
     return jsonify(cur.rowcount)
+
+@app.route('/health')
+def health():
+    return "200"
