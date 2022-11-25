@@ -3,7 +3,6 @@ import psycopg2
 from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
-app.run(host='0.0.0.0')
 
 
 def get_db_connection():
@@ -13,6 +12,8 @@ def get_db_connection():
                             password=os.environ['DB_PASSWORD'])
     return conn
 
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
 
 @app.route('/')
 def index():
